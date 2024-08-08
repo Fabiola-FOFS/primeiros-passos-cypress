@@ -22,9 +22,9 @@ uma vez que meu projeto já está aberto no vs cd é  só digitar no terminal np
 4. linkar o repositorio do pc no do git = o proprio git hub da ps passos que são 
 4.1 copiar git remote add origin https:link do projeto
 4.2 copiar git branch -M main (renomerar para principal)
-5. salvar - commitar o projeto : no git bash = git add e seleciona o arquivo que vc deseja salvar ou para adicionar tudo o que está na pasta coloque git add . 
+5. salvar - commitar o projeto : no git bash = git add e seleciona o arquivo que vc deseja salvar ou para adicionar tudo o que está na pasta coloque git add . / não recomendavel quando se trabalha em equipe
 6. git commit - para salvar no repositório
-7. para salvar alterações direto no projeto: 
+7. para salvar alterações direto no projeto: git commit -m "nome do arquivo" + depois o git push
 
 #README.md = 
 arquivo para dizer como se utiliza o codigo/projeto
