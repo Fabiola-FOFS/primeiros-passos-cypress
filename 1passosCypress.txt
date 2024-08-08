@@ -1,0 +1,25 @@
+vou sempre ter que instalar o cypress dentro do meu projeto, preciso criar uma pasta pra ele lá 
+primeira coisa  a fazer depois de baixar o cypress no git bash é opening copiar o npn do cypress no git bash
+
+outra forma de iniciar 
+abrir o git bash direto dentro da pasta que eu quero usar (basta entrar na pasta clicar com o botaõ direito do mouse)
+no git bash abro o  vs code colocando (code .)
+no vscode eu crio um arquivo json, clicar em terminal novo terminal e no terminal digirar : npm init -y
+instalar o cypress - npm install cypress -D
+abir o cypres - npx cypress open 
+escolher o tipo de teste e o browser a ser usado
+na pasta cypress ir no arquivo js. e colocar o site que vamos explorar ex:https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/inde
+quando for verificar a classe não é o melhor atributo para se usar 
+é bom entrar no html e criar atributos proprio pra QA 
+
+Vs code e cypress
+uma vez que meu projeto já está aberto no vs cd é  só digitar no terminal npx cypress open para abrir o menu de testes do cypress 
+
+#copiando meu projeto para o repósitorio
+1. abrir o git bash dentro da pasta 
+2. criar um repositório no git hub
+3. git init 
+4. linkar o repositorio do pc no do git = o proprio git hub da ps passos que são 
+4.1 copiar git remote add origin https:link do projeto
+4.2 copiar git branch -M main (renomerar para principal)
+5. salvar - commitar o projeto : no git bash = git add e seleciona o arquivo que vc deseja salvar ou para adicionar tudo o que está na pasta coloque git add . 
