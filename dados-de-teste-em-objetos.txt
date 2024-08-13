@@ -1,0 +1,3 @@
+Usando dados de teste em objetos 
+
+podemos também criar criar objetos para tornar o acesso aos dados do usuario por exemplo mais simples

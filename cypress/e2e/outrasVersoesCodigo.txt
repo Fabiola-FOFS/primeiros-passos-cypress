@@ -1,0 +1,20 @@
+
+  /*it/*.skip/*para pular('login - sucess', () => {
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.get("[name='username']")/*caminho muito longo, procurar uma forma mais limpa e rapida :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input/.type('Admin') // simplificando e usando um seletor menor é mais facil lembrar depois o que é e alguém trabalhando cmg vai saber com mais facilidade tbm 
+    cy.get("[name='password']").type('admin123')
+    cy.get('.oxd-button').click()
+    cy.location('pathname').should('equal', '/web/index.php/dashboard/index') //ter certeza que está no lugar certo
+    cy.get('.oxd-topbar-header-breadcrumb-module') //verificar se esta palavra está na pagina que estamos explorando
+  })
+    it('login - faill', () => {
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('test')
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('test')
+    cy.get('.oxd-button').click()
+    cy.get('.oxd-alert-content')
+})*/
+
+no começo utilizamos utilizamos selectors muito longos e que poderiam sofrer alteração
+é preciso abstrair o codigo e criar uma forma de acessar os dados principais sem afetar o codigo
+para isso criamos um objeto, ainda assim o codigo estava longo então utilizamos a fixtures para colocar o obejeto que guarda e acessa os dados 

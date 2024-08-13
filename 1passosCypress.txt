@@ -1,16 +1,15 @@
-vou sempre ter que instalar o cypress dentro do meu projeto, preciso criar uma pasta pra ele lá 
-primeira coisa  a fazer depois de baixar o cypress no git bash é opening copiar o npn do cypress no git bash
+Iniciando o Cypress no meu projeto 
 
-#outra forma de iniciar 
-abrir o git bash direto dentro da pasta que eu quero usar (basta entrar na pasta clicar com o botaõ direito do mouse)
-no git bash abro o  vs code colocando (code .)
-no vscode eu crio um arquivo json, clicar em terminal novo terminal e no terminal digirar : npm init -y
-instalar o cypress - npm install cypress -D
-abir o cypres - npx cypress open 
+#Iniciar
+1. abrir o git bash direto dentro da pasta que eu quero usar (basta entrar na pasta clicar com o botaõ direito do mouse)
+2. no git bash abro o  vs code colocando (code .)
+3. no vscode eu crio um arquivo json, clicar em terminal novo terminal e no terminal digirar : npm init -y
+4. instalar o cypress : - npm install cypress -D
+5. abir o cypres:  - npx cypress open 
 escolher o tipo de teste e o browser a ser usado
-na pasta cypress ir no arquivo js. e colocar o site que vamos explorar ex:https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/inde
-quando for verificar a classe não é o melhor atributo para se usar 
-é bom entrar no html e criar atributos proprio pra QA 
+5.1 na pasta cypress ir no arquivo js. e colocar o site que vamos explorar ex:https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/inde
+
+
 
 #vs code e cypress
 uma vez que meu projeto já está aberto no vs cd é  só digitar no terminal npx cypress open para abrir o menu de testes do cypress 
@@ -28,3 +27,6 @@ uma vez que meu projeto já está aberto no vs cd é  só digitar no terminal np
 
 #README.md = 
 arquivo para dizer como se utiliza o codigo/projeto
+
+obs: quando for verificar a classe não é o melhor atributo para se usar 
+é bom entrar no html e criar atributos proprio pra QA 
