@@ -30,3 +30,6 @@ arquivo para dizer como se utiliza o codigo/projeto
 
 obs: quando for verificar a classe não é o melhor atributo para se usar 
 é bom entrar no html e criar atributos proprio pra QA 
+
+# deixar o codigo limpo = abstrair 
+utilizar objetos e colocar os dados na pasta fixtures por exemplo, e a url base em config, evitando repetir url no codigo
