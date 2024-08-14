@@ -11,17 +11,35 @@ const selectorsList = {  //fazendo isso abstraimos os dados para ficar mais faci
   loginButton: "[type= 'submit']",
   selectonTitleTopBar: ".oxd-topbar-header-breadcrumb-module",
   dashboardGrid: ".orangehrm-dashboard-grid",
-  wrongCredentialAlert: "[role='alert']"
+  wrongCredentialAlert: "[role='alert']",
+  myInfoButton: "[href='/web/index.php/pim/viewMyDetails']",
+  firstNameField: "[name='firstName']",
+  lastNameField: "[name='lastName']",
+  genericField: ".oxd-input--active",
+  dateField: '[placeholder="yyyy-dd-mm"]',
+  dateCloseButton: ".--close",
+  submiteButton: "[type= 'submite']",
 }
  
 
-  it ('login - sucess', () => {
+  it.only('User info Update - sucess', () => {
+
     cy.visit('/auth/login')
     cy.get(selectorsList.usernameField).type(userData.userSuccess.username)
     cy.get(selectorsList.passwordField).type(userData.userSuccess.password)
     cy.get(selectorsList.loginButton).click()
     cy.location('pathname').should('equal','/web/index.php/dashboard/index') 
     cy.get(selectorsList.dashboardGrid)
+    cy.get(selectorsList.myInfoButton).click()
+    cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
+    cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
+    cy.get(selectorsList.genericField).eq(3).clear().type('IdTest')
+    cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest')
+    cy.get(selectorsList.genericField).eq(5).clear().type('DriverNumberTest')
+    cy.get(selectorsList.genericField).eq(7).clear().type('2024-13-08')
+    cy.get(selectorsList.dateCloseButton).click()
+    cy.get(selectorsList.submiteButton).eq(0).click()
+
   })
 
   it('login - faill', () => {
