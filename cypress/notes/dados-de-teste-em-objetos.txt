@@ -1,3 +1,6 @@
 Usando dados de teste em objetos 
 
 podemos também criar criar objetos para tornar o acesso aos dados do usuario por exemplo mais simples
+
+para tornar o codigo mais facil de entender e ser acessado criamos page objects, 
+1. criar pasta pages : criar arquivos js que representem as paginas do sistema

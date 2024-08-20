@@ -1,45 +1,34 @@
 
 import userData from '../fixtures/users/userData.json'
+import LoginPage from '../pages/loginPage.js'
+import DashboardPage from '../pages/dashboardPage.js'
+import MenuPage  from '../pages/menuPage.js'
+import myInfoPage from '../pages/myInfoPages.js'
+
+const loginPage = new LoginPage()
+const dashboardPage = new DashboardPage()
+const menuPage = new MenuPage()
+const MyInfoPage = new myInfoPage()
 
 describe('orange HRM tests', () => {
   
-
-
 const selectorsList = {  //fazendo isso abstraimos os dados para ficar mais facil de entender e reutilizar a informação com mais facilidade
-  usernameField: "[name='username']", //o atributo pode mudar e desta forma é mais facil manter a automação funcionando
-  passwordField: "[name= 'password']",
-  loginButton: "[type= 'submit']",
-  selectonTitleTopBar: ".oxd-topbar-header-breadcrumb-module",
-  dashboardGrid: ".orangehrm-dashboard-grid",
-  wrongCredentialAlert: "[role='alert']",
-  myInfoButton: "[href='/web/index.php/pim/viewMyDetails']",
-  firstNameField: "[name='firstName']",
-  lastNameField: "[name='lastName']",
-  genericField: ".oxd-input--active",
-  dateField: '[placeholder="yyyy-dd-mm"]',
-  dateCloseButton: ".--close",
-  submiteButton: "[type= 'submite']",
+  
 }
- 
 
   it.only('User info Update - sucess', () => {
+   loginPage.accessLoginPage()
+   loginPage.loginWhitUser(userData.userSuccess.username, userData.userSuccess.password)
+   dashboardPage.checkDashboardPage()
+   menuPage.accessMyInfo()
+   MyInfoPage.fillPersonalDetails('firstName', 'lastName')
+   MyInfoPage.fillEmployeeDetails('employid', 'OtherID', '123456', '2024-09-20' )
+   MyInfoPage.fillStatus("oxd-select-text--arrow", ".oxd-select-dropdown > :nth-child(27)",".oxd-select-dropdown > :nth-child(3)")
+   MyInfoPage.saveForm()
 
-    cy.visit('/auth/login')
-    cy.get(selectorsList.usernameField).type(userData.userSuccess.username)
-    cy.get(selectorsList.passwordField).type(userData.userSuccess.password)
-    cy.get(selectorsList.loginButton).click()
-    cy.location('pathname').should('equal','/web/index.php/dashboard/index') 
-    cy.get(selectorsList.dashboardGrid)
-    cy.get(selectorsList.myInfoButton).click()
-    cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
-    cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
-    cy.get(selectorsList.genericField).eq(3).clear().type('IdTest')
-    cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest')
-    cy.get(selectorsList.genericField).eq(5).clear().type('DriverNumberTest')
-    cy.get(selectorsList.genericField).eq(7).clear().type('2024-13-08')
-    cy.get(selectorsList.dateCloseButton).click()
-    cy.get(selectorsList.submiteButton).eq(0).click()
-
+   
+   
+    
   })
 
   it('login - faill', () => {
